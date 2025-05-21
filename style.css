@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111827;
+    font-family: Arial, sans-serif;
+}
+
+.Calculadora {
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+    color: white;
+}
+
+#Pantalla {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: right;
+    border: none;
+    border-radius: 8px;
+    background: #e5e7eb;
+    color: black;
+}
+
+.Botones {
+    display: grid;
+    padding: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background: #374151;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 10px;
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: #6b7280;
+}
+
+.Limpiar {
+    background: #374c51;
+}
+
+.Funciones {
+    background: #3a3044;
+}
+
+.Firma {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 25px;
+}
+
+button:hover {
+    background: #4b5563;
+}
+
+.Firma:hover {
+    background-color: #2d333b;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .Calculadora {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #Pantalla {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
