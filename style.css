@@ -325,3 +325,21 @@ body.modo-claro .btnHistorial {
 body.modo-claro .btnHistorial:hover {
     background-color: #cbd5e1;
 }
+
+/* Botón de eliminar historial en rojo */
+.btnHistorial.eliminar {
+    background-color: #dc2626; /* rojo intenso */
+}
+
+.btnHistorial.eliminar:hover {
+    background-color: #b91c1c; /* rojo más oscuro */
+}
+
+body.modo-claro .btnHistorial.eliminar {
+    background-color: #f87171;
+    color: white;
+}
+
+body.modo-claro .btnHistorial.eliminar:hover {
+    background-color: #ef4444;
+}
