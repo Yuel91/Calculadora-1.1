@@ -29,12 +29,30 @@ function eliminarUltimo() {
 }
 
 function Calcular() {
+    const pantalla = document.getElementById('Pantalla');
+    const historial = document.getElementById('Historial');
     try {
-        const resultado = eval(document.getElementById('Pantalla').value);
-        document.getElementById('Pantalla').value = resultado;
+        const resultado = eval(pantalla.value);
+        const operacion = pantalla.value + ' = ' + resultado;
+        pantalla.value = resultado;
+
+        // Crear nuevo registro visual
+        const nuevoRegistro = document.createElement('div');
+        nuevoRegistro.textContent = operacion;
+        historial.appendChild(nuevoRegistro);
+
+        // Guardar en localStorage
+        guardarEnHistorial(operacion);
+
+        // Scroll automático
+        historial.scrollTop = historial.scrollHeight;
     } catch {
-        document.getElementById('Pantalla').value = 'Error';
+        pantalla.value = 'Error';
     }
+}
+
+function limpiarHistorial() {
+    document.getElementById('Historial').innerHTML = '';
 }
 
 function cambiarSigno() {
@@ -73,3 +91,42 @@ document.addEventListener('keydown', function (event) {
     if (key === 'Backspace') eliminarUltimo();
     if (key === 'Escape') limpiarPantalla();
 });
+
+function guardarEnHistorial(operacion) {
+    const historialGuardado = JSON.parse(localStorage.getItem('historial')) || [];
+    historialGuardado.push(operacion);
+    localStorage.setItem('historial', JSON.stringify(historialGuardado));
+}
+
+function cargarHistorial() {
+    const historial = document.getElementById('Historial');
+    const historialGuardado = JSON.parse(localStorage.getItem('historial')) || [];
+    historialGuardado.forEach(op => {
+        const div = document.createElement('div');
+        div.textContent = op;
+        historial.appendChild(div);
+    });
+    historial.scrollTop = historial.scrollHeight;
+}
+
+function limpiarHistorial() {
+    document.getElementById('Historial').innerHTML = '';
+    localStorage.removeItem('historial');
+}
+
+window.onload = function () {
+    cargarHistorial();
+};
+
+//Ocultar historial
+function toggleHistorial() {
+    const historial = document.getElementById('Historial');
+    const toggleBtn = document.getElementById('ToggleHistorial');
+    if (historial.style.display === 'none' || historial.style.display === '') {
+        historial.style.display = 'block';
+        toggleBtn.textContent = '🙈';
+    } else {
+        historial.style.display = 'none';
+        toggleBtn.textContent = '🧾';
+    }
+}

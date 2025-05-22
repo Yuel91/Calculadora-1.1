@@ -10,7 +10,15 @@
     <div class="Calculadora">
         <h1>Calculadora</h1>
         <button class="Tema" onclick="cambiarTema()">🌙 / ☀️</button>
+        <!-- Pantalla -->
         <input type="text" id="Pantalla" disabled>
+        <!-- Controles de Historial -->
+        <div class="ControlesHistorial">
+        <button id="ToggleHistorial" class="btnHistorial" onclick="toggleHistorial()">🧾</button>
+        <button class="btnHistorial" onclick="limpiarHistorial()">🗑</button>
+        </div>
+        <div id="Historial" class="Historial"></div>
+
         <div class="Botones">
             <button class="Limpiar" onclick="limpiarPantalla()">C</button>
             <button class="Funciones" onclick="agregarValor('/')">/</button>
