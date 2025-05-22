@@ -9,6 +9,7 @@
 <body>
     <div class="Calculadora">
         <h1>Calculadora</h1>
+        <button class="Tema" onclick="cambiarTema()">🌙 / ☀️</button>
         <input type="text" id="Pantalla" disabled>
         <div class="Botones">
             <button class="Limpiar" onclick="limpiarPantalla()">C</button>
@@ -29,7 +30,7 @@
             <button onclick="agregarValor('1')">1</button>
             <button onclick="agregarValor('2')">2</button>
             <button onclick="agregarValor('3')">3</button>
-            <button class="Funciones" onclick="Calcular()">=</button>
+            <button class="Igual" onclick="Calcular()">=</button>
 
             <button onclick="agregarValor('0')">0</button>
             <button onclick="agregarValor('.')">.</button>

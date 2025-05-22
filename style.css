@@ -1,9 +1,11 @@
+/* base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* cuerpo */
 body {
     display: flex;
     justify-content: center;
@@ -13,6 +15,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* contenedor */
 .Calculadora {
     background: #1f2937;
     padding: 20px;
@@ -23,6 +26,7 @@ body {
     color: white;
 }
 
+/* pantalla */
 #Pantalla {
     width: 100%;
     height: 50px;
@@ -36,6 +40,7 @@ body {
     color: black;
 }
 
+/* botones */
 .Botones {
     display: grid;
     padding: 15px;
@@ -51,20 +56,33 @@ button {
     color: white;
     cursor: pointer;
     transition: all 0.2s;
-    border-radius: 10px;
 }
 
-button:active {
-    transform: scale(0.95);
-    background-color: #6b7280;
+button:hover {
+    background: #4b5563;
 }
 
 .Limpiar {
-    background: #374c51;
+    background: #ef4444; /* rojo vivo */
+    color: white;
 }
+
+.Limpiar:hover {
+    background: #dc2626; /* rojo aún más intenso */
+}
+
 
 .Funciones {
     background: #3a3044;
+}
+
+.Igual {
+    background: #16a34a;
+    color: white;
+}
+
+.Igual:hover {
+    background: #15803d;
 }
 
 .Firma {
@@ -76,27 +94,81 @@ button:active {
     border-radius: 25px;
 }
 
-button:hover {
-    background: #4b5563;
-}
-
 .Firma:hover {
     background-color: #2d333b;
 }
 
-/* Responsive */
-@media (max-width: 400px) {
-    .Calculadora {
-        width: 90%;
-        padding: 15px;
-    }
+/* botón de tema */
+.Tema {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #4b5563;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.Tema:hover {
+    background: #6b7280;
+}
 
-    #Pantalla {
-        font-size: 20px;
-    }
+/* modo claro */
+.light-mode {
+    background: #f3f4f6;
+    color: #1f2937;
+}
 
-    button {
-        font-size: 16px;
-        padding: 12px;
-    }
+.light-mode .Calculadora {
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.light-mode #Pantalla {
+    background: #f9fafb;
+    color: black;
+}
+
+.light-mode button {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+.light-mode .Funciones {
+    background: #fca5a5;
+    color: white;
+}
+.light-mode .Funciones:hover {
+    background: #f87171;
+}
+
+.light-mode .Igual {
+    background: #86efac;
+    color: #065f46;
+}
+.light-mode .Igual:hover {
+    background: #4ade80;
+}
+
+.light-mode .Limpiar {
+    background: #93c5fd;
+    color: white;
+}
+.light-mode .Limpiar:hover {
+    background: #60a5fa;
+}
+
+.light-mode .Tema {
+    background: #e0e7ff;
+    color: #1e3a8a;
+}
+.light-mode .Tema:hover {
+    background: #c7d2fe;
+}
+
+.light-mode .Firma {
+    color: #4b5563;
+}
+.light-mode .Firma:hover {
+    background: #e5e7eb;
 }
